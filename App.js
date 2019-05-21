@@ -24,6 +24,7 @@ export default class App extends Component{
       <View style={styles.container}>
         <Text style={styles.welcome}>Welcome to Pixabay Image Viewer!</Text>
         <TextInput 
+          style={styles.input}
           placeholder={'Search for image'}
           value={this.state.query}
           onChangeText={query => this.setState({ query })}
@@ -44,5 +45,13 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: 'center',
     margin: 10,
+  },
+  input:{
+    height: '5%',
+    width: '50%',
+    backgroundColor: 'white',
+    borderRadius: 10,
+    paddingLeft: 10,
+    marginTop: 50
   }
 });
