@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { FlatList, Image, StyleSheet, Text, View } from 'react-native';
+import { FlatList, Image, StyleSheet, View } from 'react-native';
 
 export default class Results extends Component {
   render() {  
@@ -8,7 +8,7 @@ export default class Results extends Component {
         <FlatList
           data={this.props.results}
           renderItem={({ item }) => (
-            <View style={{ flex: 1, flexDirection: 'column', margin: 1 }}>
+            <View style={styles.list}>
               <Image style={styles.imageThumbnail} source={{ uri: item.previewURL }} />
             </View>
           )}
@@ -26,9 +26,8 @@ const styles = StyleSheet.create({
     height: 100,
   },
   list: {
-    backgroundColor: "red",
-    flex: 1,
-    width: '100%',
-    paddingTop: 25
+    flex: 1, 
+    flexDirection: 'column', 
+    margin: 1
   }
 })
