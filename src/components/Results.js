@@ -5,21 +5,6 @@ export default class Results extends Component {
   render() {  
     console.log (this.props.results[0].previewURL)
     return(
-      // <View style={styles.list}>
-      //   <FlatList
-      //     data={this.props.results}
-      //     renderItem={({item}) => {
-      //       <Text>{item.previewURL}</Text>
-      //       // <View style={{ height: 40, width: 40, backgroundColor: 'black'}}>
-      //       //   <Text>{item.previewURL}</Text>
-      //       // </View>
-      //     }}
-      //     keyExtractor={item => {
-      //       return item.id.toString();
-      //     }}
-      //   />
-      // </View>
-      
         <FlatList
           data={this.props.results}
           renderItem={({ item }) => (
@@ -27,7 +12,6 @@ export default class Results extends Component {
               <Image style={styles.imageThumbnail} source={{ uri: item.previewURL }} />
             </View>
           )}
-          //Setting the number of column
           numColumns={3}
           keyExtractor={(item) => item.id}
         />
