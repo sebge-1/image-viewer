@@ -7,7 +7,8 @@
  */
 
 import React, {Component} from 'react';
-import { StyleSheet, Text, TextInput, View} from 'react-native';
+import { StyleSheet, Text, TextInput, TouchableHighlight, View} from 'react-native';
+import  Icon from 'react-native-vector-icons/FontAwesome';
 import { env } from './env.js'
 
 export default class App extends Component{
@@ -15,8 +16,8 @@ export default class App extends Component{
     query: ''
   };
 
-  fetchImages = query => {
-    console.log(query)
+  fetchImages = () => {
+    console.log(this.state.query)
   };
 
   render() {
@@ -29,6 +30,11 @@ export default class App extends Component{
           value={this.state.query}
           onChangeText={query => this.setState({ query })}
         />
+        <TouchableHighlight onPress = {()=>{this.fetchImages()}}>
+          <View>
+            <Icon name="search" size = {20} color = "#4285F4" />
+          </View>
+        </TouchableHighlight>
       </View>
     );
   }
