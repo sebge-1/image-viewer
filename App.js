@@ -17,8 +17,16 @@ export default class App extends Component{
   };
 
   fetchImages = () => {
-    console.log(this.state.query)
-  };
+    const { BASE_URL, apiKeyPrepend, API_KEY, queryPrePend } = env;
+    const queryURL = encodeURI(BASE_URL + apiKeyPrepend + API_KEY + queryPrePend + this.state.query);
+    fetch(queryURL)
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(myJson) {
+        console.log(JSON.stringify(myJson));
+      });
+    };
 
   render() {
     return (
