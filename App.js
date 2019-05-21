@@ -7,13 +7,27 @@
  */
 
 import React, {Component} from 'react';
-import { StyleSheet, Text, View} from 'react-native';
+import { StyleSheet, Text, TextInput, View} from 'react-native';
+import { env } from './env.js'
 
 export default class App extends Component{
+  state = {
+    query: ''
+  };
+
+  fetchImages = query => {
+    console.log(query)
+  };
+
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>Welcome to Pixabay Image Viewer!</Text>
+        <TextInput 
+          placeholder={'Search for image'}
+          value={this.state.query}
+          onChangeText={query => this.setState({ query })}
+        />
       </View>
     );
   }
