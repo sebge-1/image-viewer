@@ -13,19 +13,16 @@ import { env } from './env.js'
 
 export default class App extends Component{
   state = {
-    query: ''
+    query: '',
+    results: []
   };
 
   fetchImages = () => {
     const { BASE_URL, apiKeyPrepend, API_KEY, queryPrePend } = env;
     const queryURL = encodeURI(BASE_URL + apiKeyPrepend + API_KEY + queryPrePend + this.state.query);
     fetch(queryURL)
-      .then(function(response) {
-        return response.json();
-      })
-      .then(function(myJson) {
-        console.log(JSON.stringify(myJson));
-      });
+      .then(response => response.json())
+      .then(data => this.setState({results: data.hits }));
     };
 
   render() {
