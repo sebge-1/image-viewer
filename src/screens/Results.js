@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import { FlatList, Image, StyleSheet, View } from 'react-native';
+import { FlatList, StyleSheet, View } from 'react-native';
 import { ResultsContext } from '../contexts/ResultsContext';
-
+import ThumbNail from '../components/ThumbNail';
 
 export default class Results extends Component {
   render() {  
@@ -12,7 +12,7 @@ export default class Results extends Component {
             data={context.results}
             renderItem={({ item }) => (
               <View style={styles.list}>
-                <Image style={styles.imageThumbnail} source={{ uri: item.previewURL }} />
+                <ThumbNail image={item}/>
               </View>
             )}
             numColumns={3}
@@ -26,11 +26,6 @@ export default class Results extends Component {
 }
 
 const styles = StyleSheet.create({
-  imageThumbnail: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: 100,
-  },
   list: {
     flex: 1, 
     flexDirection: 'column', 
