@@ -1,20 +1,26 @@
 import React, {Component} from 'react';
 import { FlatList, Image, StyleSheet, View } from 'react-native';
+import { ResultsContext } from '../contexts/ResultsContext';
+
 
 export default class Results extends Component {
   render() {  
-    console.log (this.props.results[0].previewURL)
     return(
-        <FlatList
-          data={this.props.results}
-          renderItem={({ item }) => (
-            <View style={styles.list}>
-              <Image style={styles.imageThumbnail} source={{ uri: item.previewURL }} />
-            </View>
-          )}
-          numColumns={3}
-          keyExtractor={(item) => item.id}
-        />
+      <ResultsContext.Consumer>
+        {(context) => (
+          <FlatList
+            data={context.results}
+            renderItem={({ item }) => (
+              <View style={styles.list}>
+                <Image style={styles.imageThumbnail} source={{ uri: item.previewURL }} />
+              </View>
+            )}
+            numColumns={3}
+            keyExtractor={(item) => item.id}
+          />
+        )
+      }
+      </ResultsContext.Consumer>
     )
   }
 }
