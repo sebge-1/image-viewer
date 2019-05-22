@@ -1,12 +1,12 @@
 import React from 'react';
 import SearchButton from '../components/SearchButton';
 import { StyleSheet, Text, TextInput, View } from 'react-native';
-import { ResultsContext } from '../contexts/ResultsContext';
+import { AppContext } from '../contexts/AppContext';
 
 export default class Home extends React.Component {
   render() {
     return(
-      <ResultsContext.Consumer>
+      <AppContext.Consumer>
         {(context) => (
           <View style={{alignItems: 'center'}}>
             <Text style={styles.welcome}>Welcome to Pixabay Image Viewer!</Text>
@@ -19,7 +19,7 @@ export default class Home extends React.Component {
             <SearchButton navigation={this.props.navigation}/>
           </View>
         )}
-      </ResultsContext.Consumer>
+      </AppContext.Consumer>
     )
   }
 }
