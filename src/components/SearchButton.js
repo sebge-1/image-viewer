@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { TouchableHighlight, View } from 'react-native';
-import {ResultsContext} from '../contexts/ResultsContext';
+import { AppContext } from '../contexts/AppContext';
 import  Icon from 'react-native-vector-icons/FontAwesome';
 
 export default class SearchButton extends Component {
@@ -10,12 +10,12 @@ export default class SearchButton extends Component {
   }
 
   handlePress = (context) => {
-    this.navigate();
-    context.fetchImages();
+    context.fetchImages(this.navigate)
   }
+
   render() {
     return(
-      <ResultsContext.Consumer> 
+      <AppContext.Consumer> 
         {(context) => (
           <TouchableHighlight onPress = {()=>{this.handlePress(context)}}>
               <View style={{marginTop: 20}}>
@@ -24,7 +24,7 @@ export default class SearchButton extends Component {
           </TouchableHighlight>
           )
         }
-      </ResultsContext.Consumer>
+      </AppContext.Consumer>
     )
   }
 }
