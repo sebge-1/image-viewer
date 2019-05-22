@@ -1,18 +1,22 @@
 import React, {Component} from 'react';
 import { FlatList, StyleSheet, View } from 'react-native';
-import { ResultsContext } from '../contexts/ResultsContext';
+import { AppContext } from '../contexts/AppContext';
 import ThumbNail from '../components/ThumbNail';
 
 export default class Results extends Component {
   render() {  
     return(
-      <ResultsContext.Consumer>
+      <AppContext.Consumer>
         {(context) => (
           <FlatList
             data={context.results}
             renderItem={({ item }) => (
               <View style={styles.list}>
-                <ThumbNail image={item}/>
+                <ThumbNail 
+                  image={item} 
+                  handleSelection={context.updateSelection} 
+                  navigation={this.props.navigation}
+                />
               </View>
             )}
             numColumns={3}
@@ -20,7 +24,7 @@ export default class Results extends Component {
           />
         )
       }
-      </ResultsContext.Consumer>
+      </AppContext.Consumer>
     )
   }
 }
