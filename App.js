@@ -8,19 +8,19 @@
 
 import React, {Component} from 'react';
 import { StyleSheet, Text, TextInput, TouchableHighlight, View} from 'react-native';
-import ResultsProvider from './src/components/ResultsProvider';
-import { AppContainer } from './src/AppContainer'
+import AppProvider from './src/components/AppProvider';
+import { AppContainer } from './src/components/AppContainer'
 
 export default class App extends Component{
 
   render() {
 
     return (
-      <ResultsProvider>
+      <AppProvider>
         <View style={styles.container}>
           <AppContainer/>
         </View>
-      </ResultsProvider>
+      </AppProvider>
     );
   }
 }
