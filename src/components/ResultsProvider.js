@@ -4,6 +4,7 @@ import { env } from '../../env.js'
 
 export default class ResultsProvider extends Component {
   state = {
+    query: "",
     results: []
   }
 
@@ -15,11 +16,17 @@ export default class ResultsProvider extends Component {
       .then(data => this.setState({results: data.hits }))
     };
 
+    updateQuery = query => {
+      this.setState({ query} )
+    }
+
   render() {
     return (
       <ResultsContext.Provider value={{
+        query: this.state.query,
         results: this.state.results,
-        fetchImages: this.fetchImages
+        fetchImages: this.fetchImages,
+        updateQuery: this.updateQuery
       }}>
         {this.props.children}
       </ResultsContext.Provider>
