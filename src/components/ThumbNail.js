@@ -1,10 +1,22 @@
 import React, {Component} from 'react';
-import { Image, StyleSheet } from 'react-native';
+import { Image, StyleSheet, TouchableHighlight } from 'react-native';
 
 export default class ThumbNail extends Component {
+
+  navigate = () => {
+    this.props.navigation.navigate('DetailView')
+  }
+  
+  handlePress = () => {
+    this.props.handleSelection(this.props.image, this.navigate)
+  }
+
   render() {  
+    const preview = this.props.image.previewURL;
     return(
-      <Image style={styles.imageThumbnail} source={{ uri: this.props.image.previewURL }} />
+      <TouchableHighlight onPress={() => {this.handlePress()}}>
+        <Image style={styles.imageThumbnail} source={{ uri: preview }}/>
+      </TouchableHighlight>
     )
   }
 }
