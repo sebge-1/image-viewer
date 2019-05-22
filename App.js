@@ -9,7 +9,7 @@
 import React, {Component} from 'react';
 import { StyleSheet, Text, TextInput, TouchableHighlight, View} from 'react-native';
 import ResultsProvider from './src/components/ResultsProvider';
-import AppContainer from './src/AppContainer'
+import { AppContainer } from './src/AppContainer'
 
 export default class App extends Component{
 
