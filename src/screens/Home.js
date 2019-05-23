@@ -1,25 +1,21 @@
 import React from 'react';
-import SearchButton from '../components/SearchButton';
-import { StyleSheet, Text, TextInput, View } from 'react-native';
-import { AppContext } from '../contexts/AppContext';
+import { ImageBackground, StyleSheet, Text, View } from 'react-native';
+import SearchBar from '../components/SearchBar';
 
 export default class Home extends React.Component {
   render() {
     return(
-      <AppContext.Consumer>
-        {(context) => (
-          <View style={{alignItems: 'center'}}>
-            <Text style={styles.welcome}>Welcome to Pixabay Image Viewer!</Text>
-            <TextInput 
-              style={styles.input}
-              placeholder={'Search for image'}
-              value={context.query}
-              onChangeText={query => context.updateQuery(query)}
-            />
-            <SearchButton navigation={this.props.navigation}/>
+      <ImageBackground 
+        source={require('../assets/sarandy-westfall-742134-unsplash.jpg')}  
+        style={styles.backgroundImage}
+      >
+        <View style={{alignItems: 'center'}}>
+          <View style={styles.textBackground}>
+            <Text style={styles.welcome}>Pixabay Image Viewer</Text>
           </View>
-        )}
-      </AppContext.Consumer>
+          <SearchBar navigation={this.props.navigation}/>
+        </View>
+      </ImageBackground>
     )
   }
 }
@@ -27,14 +23,19 @@ export default class Home extends React.Component {
 const styles = StyleSheet.create({
   welcome: {
     fontSize: 20,
-    marginTop: 50
+    fontWeight: 'bold',
+    color: 'white',
   },
-  input:{
-    height: '10%',
-    width: '50%',
-    backgroundColor: 'white',
-    borderRadius: 10,
-    paddingLeft: 10,
-    marginTop: 50
+  backgroundImage: {
+    flex: 1,
+    resizeMode: 'cover'
+  },
+  textBackground: {
+    backgroundColor: 'rgba(0,0,0,0.7)',
+    width: '100%',
+    minHeight: 80,
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
   }
 })
