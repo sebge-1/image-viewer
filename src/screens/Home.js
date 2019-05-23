@@ -25,6 +25,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     color: 'white',
+    margin: 20
   },
   backgroundImage: {
     flex: 1,
