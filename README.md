@@ -17,4 +17,13 @@ React Native app that lets users search for images, display thumbnails in a grid
  
  ## Screenshots
  ### ios
+ ![](/screenshots/ios/ios-1.png)
+ ![](/screenshots/ios/ios-2.png)
+ ![](/screenshots/ios/ios-3.png)
+
  ### Android
+ ![](/screenshots/Android/android-1.png)
+ ![](/screenshots/Android/android-2.png)
+ ![](/screenshots/Android/android-3.png)
+
+
