@@ -25,7 +25,6 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     color: 'white',
-    margin: 20
   },
   backgroundImage: {
     flex: 1,
@@ -37,6 +36,7 @@ const styles = StyleSheet.create({
     minHeight: 80,
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    marginTop: 40
   }
 })
