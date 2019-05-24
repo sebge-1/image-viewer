@@ -36,7 +36,7 @@ export default class SearchBar extends Component {
               TouchableNativeFeedback.Ripple('rgba(0,0,0,.5)', true) :
               TouchableNativeFeedback.SelectableBackground()
             }
-            underlayColor='none' 
+            underlayColor='transparent' 
             onPress={()=>{this.handleSubmit(context)}} 
             >
             <View style={{top: -42, right: -92}}>
