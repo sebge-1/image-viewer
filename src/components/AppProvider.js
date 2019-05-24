@@ -13,8 +13,15 @@ export default class AppProvider extends Component {
     const { BASE_URL, apiKeyPrepend, API_KEY, queryPrePend } = env;
     const queryURL = encodeURI(BASE_URL + apiKeyPrepend + API_KEY + queryPrePend + this.state.query);
     fetch(queryURL)
-      .then(response => response.json())
+      .then(response => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          return Promise.reject({ status: response.status, statusText: response.statusText });
+        }
+      })
       .then(data => this.setState({results: data.hits}, () => callback()))
+      .catch(err => console.log('Error, with message:', err.statusText));
     };
 
   updateQuery = query => this.setState({ query })
