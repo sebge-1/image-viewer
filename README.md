@@ -1,5 +1,5 @@
 # image-viewer
-React Native app that lets users search for images, display thumbnails in a grid list, and a detailed view of individual selected images
+React Native app that lets users search for images, displays thumbnails in a grid list, and a detailed view of individual selected images
 
 ## Installation
 1. Clone the repository to your local machine
@@ -20,10 +20,11 @@ React Native app that lets users search for images, display thumbnails in a grid
  ![](/screenshots/ios/ios-1.png)
  ![](/screenshots/ios/ios-2.png)
  ![](/screenshots/ios/ios-3.png)
+ ![](/screenshots/ios/ios-4.png)
 
  ### Android
  ![](/screenshots/Android/android-1.png)
  ![](/screenshots/Android/android-2.png)
  ![](/screenshots/Android/android-3.png)
-
+ 1[](/screenshots/Android/android-4.png)
 
