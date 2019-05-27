@@ -26,5 +26,5 @@ React Native app that lets users search for images, displays thumbnails in a gri
  ![](/screenshots/Android/android-1.png)
  ![](/screenshots/Android/android-2.png)
  ![](/screenshots/Android/android-3.png)
- 1[](/screenshots/Android/android-4.png)
+ ![](/screenshots/Android/android-4.png)
 
